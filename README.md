@@ -8,9 +8,9 @@ __get_logs.py__: Retrieves last "N" logs of blackjack prototype, parse the logs 
 
 the __key__ represents the start time of Alexa saying the "trigger words" and the __value__ represents the time Alexa answers the next command the user gave.
 
-Example)
+Example) Parsing 10 latest logs from Cloudwatch
 ```
-python get_logs.py 10 #10 latest logs of people using the blackjack prototype
+python get_logs.py 10 
 ```
 
 # Clipping videos with FFMPEG
