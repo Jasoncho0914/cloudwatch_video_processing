@@ -10,7 +10,7 @@ the __key__ represents the start time of Alexa saying the "trigger words" and th
 
 Example)
 ```
-python get_logs.py 10 #10 latest interaction 
+python get_logs.py 10 #10 latest logs of people using the blackjack prototype
 ```
 
 # Clipping videos with FFMPEG
