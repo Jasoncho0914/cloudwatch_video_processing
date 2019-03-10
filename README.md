@@ -17,6 +17,8 @@ __get_logs_label.py__: Same as __get_logs.py__ but also outputs label. A json fi
 Example) Parsing 10 latest logs from Cloudwatch
 ```
 python get_logs.py 10 
+or
+python get_logs_label.py 10 #this will also output labels 
 ```
 
 
