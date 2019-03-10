@@ -1,6 +1,6 @@
 # Retrieving logs from Cloudwatch
 
-__get_logs.py__: Retrieves last "N" logs of blackjack prototype, parse the logs and parse timestamps when Alexa utters "trigger words", which in this cases are "You bet, you stand, you hit", and saves those timestamps in json format in 'logs' folder. A json file produced by the code will look something like this.
+__get_logs.py__: Retrieves last "N" logs of blackjack prototype, parse the logs and finds timestamps when Alexa utters "trigger words", which in this cases are "You bet, you stand, you hit", and saves those timestamps as a json in 'logs' folder. A json file produced by the code will look something like this.
 
 {'00:00:00':'00:00:05',
 '00:00:10':'00:00:32',
@@ -8,9 +8,9 @@ __get_logs.py__: Retrieves last "N" logs of blackjack prototype, parse the logs 
 
 the __key__ represents the start time of Alexa saying the "trigger words" and the __value__ represents the time Alexa answers the next command the user gave.
 
-Example)
+Example) Parsing 10 latest logs from Cloudwatch
 ```
-python get_logs.py 10 #10 latest interaction 
+python get_logs.py 10 
 ```
 
 # Clipping videos with FFMPEG
