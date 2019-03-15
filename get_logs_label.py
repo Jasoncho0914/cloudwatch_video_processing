@@ -32,14 +32,12 @@ def get_timestamps(logStreamName,
     )
 
     M_flag = 0
-    trigger_words = ["You bet","you bet","You hit","you hit","You stand","you stand"]
     back = 0
     ret_dict={}
     lag=0
     start_time = datetime.datetime.fromtimestamp(round(response['events'][0]['timestamp']/1000))
     for each in response['events']:
         try:
-
 
             if "Mistake made" in each['message']:
                 M_flag = 1
@@ -60,7 +58,8 @@ def get_timestamps(logStreamName,
                         M_flag = 0
                     else:
                         key = str("No Mistake made"+"-"+str(timestamp_1))
-
+                    
+                    key = t_word+"-"+ key
                     ret_dict[key]=None
                     back = 1
 
