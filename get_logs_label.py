@@ -32,6 +32,7 @@ def get_timestamps(logStreamName,
     )
 
     M_flag = 0
+    you_bet = ["You bet","you bet"]
     back = 0
     ret_dict={}
     lag=0
@@ -41,7 +42,6 @@ def get_timestamps(logStreamName,
 
             if "Mistake made" in each['message']:
                 M_flag = 1
-
 
             Alexa_s = re.findall(r'<speak>([\s\S]*?)<\/speak>',each['message'])[0]
             t_converted = datetime.datetime.fromtimestamp(round(each['timestamp'] / 1000))
@@ -59,8 +59,13 @@ def get_timestamps(logStreamName,
                     else:
                         key = str("No Mistake made"+"-"+str(timestamp_1))
                     
-                    key = t_word+"-"+ key
-                    ret_dict[key]=None
+                    if t_word in you_bet:
+                        new_p = re.findall(r'(?<=<say-as interpret-as=\\"cardinal\\">)(.*)(?=<\/say-as> <break time=\\"100ms\\"\/>)',Alexa_s)[0]
+                        key = new_p+"-"+key
+                    else:
+                        key = t_word+"-"+ key
+                    
+                    ret_dict[key]=None    
                     back = 1
 
         except IndexError:
