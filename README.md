@@ -26,4 +26,15 @@ python get_logs_label.py 10 #this will also output labels
 
 # Clipping videos with FFMPEG
 
-(working on it..)
+__auto_trim_1.py__: auto trim __one__ video. Syntax: python auto_trim_1.py LOGNAME VIDEONAME VIDEO_DELAY DURATION_OF_EACh_VIDEO
+
+Example)
+```
+python auto_trim_1.py 2019/03/05/[$LATEST]df74413a62cb47cf923cf8a8788a0d23 Video/blackjack_demo_run2.MTS 9 5
+```
+This will produce short 5 second clips based on the log on Cloudwatch named 2019/03/05/[$LATEST]df74413a62cb47cf923cf8a8788a0d23. 
+Based on correctness of Alexa's response, a clip will be either saved on Video/blackjack_demo_run2/Y or Video/blackjack_demo_run2/N. Each video will have 9 second lag. This assumes that Alexa started talking 9 seconds after we start recording.
+
+Things to do:
+1) Batch process (Multiple videos, multiple logs)
+2) automatic Lag detection.
