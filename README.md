@@ -26,7 +26,7 @@ python get_logs_label.py 10 #this will also output labels
 
 # Clipping videos with FFMPEG
 
-__auto_trim_1.py__: auto trim __one__ video. Syntax: python auto_trim_1.py LOGNAME VIDEONAME VIDEO_DELAY DURATION_OF_EACh_VIDEO
+__auto_trim_1.py__: auto trim __one__ video. Syntax: python auto_trim_1.py LOGNAME VIDEONAME VIDEO_DELAY DURATION
 
 Example)
 ```
